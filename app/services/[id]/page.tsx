@@ -1,9 +1,13 @@
 import { prisma } from "@/lib/prisma";
 import BookingClient from "./booking-client";
 
-export default async function ServiceDetailPage({ params }: { params: { id: string } }) {
+export default async function ServiceDetailPage(
+  { params }: { params: Promise<{ id: string }> } // 👈 params como Promise
+) {
+  const { id } = await params; // 👈 unwrap
+
   const service = await prisma.service.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: {
       slots: {
         where: { status: "AVAILABLE" },
