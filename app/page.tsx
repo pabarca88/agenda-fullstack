@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import Link from "next/link";
 
 export default async function Home() {
   const services = await prisma.service.findMany({
@@ -9,6 +10,7 @@ export default async function Home() {
 
   return (
     <main className="p-8 space-y-6">
+      <Link className="underline" href="/services">Ver servicios</Link>
       <h1 className="text-2xl font-semibold">Agenda (demo)</h1>
 
       {services.length === 0 ? (
