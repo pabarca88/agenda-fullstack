@@ -4,8 +4,8 @@ import { useState } from "react";
 
 type Slot = {
   id: string;
-  startAt: Date;
-  endAt: Date;
+  startAt: string;
+  endAt: string;
   status: string;
 };
 
@@ -60,8 +60,9 @@ export default function BookingClient({
         >
           {slots.map((s) => (
             <option key={s.id} value={s.id}>
-              {new Date(s.startAt).toISOString()}
+                {new Date(s.startAt).toLocaleString("es-CL", { timeZone: "America/Santiago" })}
             </option>
+
           ))}
         </select>
       </div>

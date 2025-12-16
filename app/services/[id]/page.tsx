@@ -21,6 +21,13 @@ export default async function ServiceDetailPage({ params }: { params: { id: stri
     );
   }
 
+  const slots = service.slots.map((s) => ({
+    id: s.id,
+    startAt: s.startAt.toISOString(),
+    endAt: s.endAt.toISOString(),
+    status: s.status,
+  }));
+
   return (
     <main className="p-8 space-y-6">
       <div>
@@ -28,7 +35,7 @@ export default async function ServiceDetailPage({ params }: { params: { id: stri
         {service.description && <div className="opacity-80">{service.description}</div>}
       </div>
 
-      <BookingClient serviceId={service.id} slots={service.slots} />
+      <BookingClient serviceId={service.id} slots={slots} />
     </main>
   );
 }
