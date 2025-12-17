@@ -43,7 +43,7 @@ export default function BookingClient({
         return;
       }
 
-      setMsg(`Reserva creada ✅ (id: ${data.bookingId})`);
+      window.location.href = `/bookings/${data.bookingId}`;
     } finally {
       setLoading(false);
     }
