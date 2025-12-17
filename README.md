@@ -1,8 +1,8 @@
+[![E2E (Playwright)](https://github.com/pabarca88/agenda-fullstack/actions/workflows/e2e.yml/badge.svg)](https://github.com/pabarca88/agenda-fullstack/actions/workflows/e2e.yml)
+
 # Agenda Fullstack (Next.js + Postgres + Prisma)
 
 Demo: https://agenda-fullstack.vercel.app
-
-[![E2E (Playwright)](https://github.com/pabarca88/agenda-fullstack/actions/workflows/e2e.yml/badge.svg)](https://github.com/pabarca88/agenda-fullstack/actions/workflows/e2e.yml)
 
 ## Features
 - Listado de servicios
