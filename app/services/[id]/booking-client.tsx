@@ -42,7 +42,7 @@ export default function BookingClient({
         setMsg(`Error: ${data.error || r.status}`);
         return;
       }
-
+      setLoading(false);
       window.location.href = `/bookings/${data.bookingId}`;
     } finally {
       setLoading(false);
