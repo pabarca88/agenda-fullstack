@@ -9,6 +9,9 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL_TEST }}
+      CI: true
 
     steps:
       - uses: actions/checkout@v4
@@ -23,9 +26,6 @@ jobs:
       - run: npx playwright install --with-deps
 
       - name: Run E2E
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL_TEST }}
-          CI: true
         run: npm run test:e2e
 
       - name: Upload report
